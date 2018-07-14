@@ -33,6 +33,30 @@ namespace WordCount.Tests.ModelTests
         }
 
         [TestMethod]
+        public void UserWord_UserWordNoSpaces_Bool()
+        {
+            // PASSED
+            WordCounter testWordCount = new WordCounter();
+            string testWord = "cr ash";
+            bool expected = false;
+            testWordCount.SetWord(testWord);
+            bool actual = testWordCount.WordNoSpaces(testWord);
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void UserWord_FalseIfNumber_Bool()
+        {
+            // PASSED
+            WordCounter testWordCount = new WordCounter();
+            string testWord = "5";
+            bool expected = false;
+            testWordCount.SetWord(testWord);
+            bool actual = testWordCount.WordLettersOnly(testWord);
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
         public void GetSetUserWords_SetsUserWordToLower_String()
         {
             // PASSED
