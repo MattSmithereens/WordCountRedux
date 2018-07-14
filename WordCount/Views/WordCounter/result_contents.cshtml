@@ -1,0 +1,11 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<p>
+    <strong>"@Model.GetWord("getWord")"</strong> appears in the phrase <strong>"@Model.GetWords("getWords")"</strong><br />
+    @*<strong>@Model.WordOccurs("compareWords", "lowCaseWord")</strong>*@
+    @Model.GetOccurTally() times.
+</p>
