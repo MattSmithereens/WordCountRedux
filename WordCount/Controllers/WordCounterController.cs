@@ -21,11 +21,12 @@ namespace WordCount.Controllers
         {
             WordCounter Model = new WordCounter();
             Model.SetWord(Request.Form["checkWord"]);
-            Model.SetWord(Request.Form["checkPhrase"]);
-            string lowCaseWord = Model.GetWord();                       //take word from form and feed it though getter, run methods
+            Model.SetWords(Request.Form["checkPhrase"]);
+            string lowCaseWord = Model.GetWord();
             string compareWords = Model.GetWords();
-            string[] compareArray = Model.splitString(compareWords);    //take words from form and run through split method
-            int result = Model.WordOccurs(compareArray, lowCaseWord);   //actually run method checking words
+            string[] compareArray = Model.splitString(compareWords);
+
+            int result = Model.WordOccurs(compareArray, lowCaseWord);
             Model.SetOccurTally(result);
             return View(Model);
         }

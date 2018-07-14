@@ -43,7 +43,7 @@ namespace WordCount.Models
             foreach (char x in letterArray)
             {
                 //if(Char.)
-                if(Char.IsLetter(x)) // put in something to sense multiple words
+                if (Char.IsLetter(x)) // put in something to sense multiple words
                 {
                     return true;
                 }
@@ -105,10 +105,10 @@ namespace WordCount.Models
             int i = GetOccurTally();
             foreach (string word in listArray)
             {
-                  if (word == lowCaseWord)
-                  {
-                        i++;
-                  }
+                if (word == lowCaseWord)
+                {
+                    i++;
+                }
             }
             return i;
         }

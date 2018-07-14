@@ -3,9 +3,8 @@
 *@
 @{
 }
-
 <p>
-    <strong>"@Model.GetWord("getWord")"</strong> appears in the phrase <strong>"@Model.GetWords("getWords")"</strong><br />
-    @*<strong>@Model.WordOccurs("compareWords", "lowCaseWord")</strong>*@
+    <strong>"@Model.GetWord()"</strong> appears in the phrase <strong>"@Model.GetWords()"</strong><br />
     @Model.GetOccurTally() times.
 </p>
+<p><a href="/form">Let's try different words!</a></p>
