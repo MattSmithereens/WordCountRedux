@@ -26,16 +26,20 @@ namespace WordCount.Controllers
             string compareWords = Model.GetWords();
             string[] compareArray = Model.splitString(compareWords);
 
-            if (lowCaseWord == "" || compareArray == "")
-                {
+            if (lowCaseWord == "")
+            {
                 return View("error");
-                    }
-                        else
-                    {
+            }
+            else if (compareWords == "")    // don't know why it got mad when I combined conditions in ||
+            {
+                return View("error");
+            }
+            else
+            {
                 int result = Model.WordOccurs(compareArray, lowCaseWord);
                 Model.SetOccurTally(result);
                 return View(Model);
-                }
+            }
 
         }
     }

@@ -21,7 +21,7 @@ namespace WordCount.Models
 
         public void SetWord(string keyWord)
         {
-            if (this.WordLettersOnly(keyWord))
+            if (this.WordLettersOnly(keyWord) && WordNoSpaces(keyWord))  // 
             {
                 string LowCaseWord = keyWord.ToLower();
                 _keyWord = LowCaseWord;
@@ -43,10 +43,20 @@ namespace WordCount.Models
             foreach (char x in letterArray)
             {
                 //if(Char.)
-                if (Char.IsLetter(x)) // put in something to sense multiple words
+                if (Char.IsLetter(x))
                 {
                     return true;
                 }
+            }
+            return false;
+        }
+
+        public bool WordNoSpaces(string keyWord)
+        {
+            string[] listArray = keyWord.Split();
+            if (listArray.Length == 1)
+            {
+                return true;
             }
             return false;
         }
