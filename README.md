@@ -10,17 +10,18 @@ A program that checks how frequently a word appears in a given string. The progr
 
 
 ### Specs
-| Spec | Input | Output |
-| :-------------     | :------------- | :------------- |
-| **Program stores the inputted key word and an inputted string to be compared**|  "bang" "bang" |  |
-| **Program converts both key and comparative strings to lower to avoid case sensitivity**|  "BANG" "bang" | "**bang**" = "**bang**" |
-| **Program recognizes punctuation and does not match**|  "were" "we're" | "**were**" =//= "**we're**" however "**we're**" = "**we're**"|
-| **Program does not recognize numbers**|  "4" | "Please try again"|
-| **Program does not allow for multiple keywords**|  "bang bang" | "Please try again"|
-| **Program does recognize words that contain numbers**|  "4ever" | "**4ever**" = "**4ever**"|
-| **Program disregards and does not tally words that contain the keyword addended or otherwise different from inputted form of keyword**| "bang" "she bangs" | (**bang**) =//= (**bangs**) |
-| **Program continues to the end of the string after encountering an initial instance of the key word and records all separate subsequent instances**| "chitty chitty bang bang" | "**bang**" = "**bang**, **bang**" |
-| **When program reaches end of character array, it returns the number of keyword instances as an integer**| "chitty chitty bang bang" | Result: 2 |
+| Spec | Input 1 | Input 2 | Output |
+| :-------------     | :------- | :-------- | :-----------
+| **Program stores the inputted key word and an inputted string to be compared**|  "bang"  | "bang" | |
+| **Program converts both key and comparative strings to lower to avoid case sensitivity**|  "BANG" | "bang" | "**bang**" = "**bang**" |
+| **Program recognizes punctuation and does not match**|  "were" | "we're" | "**were**" =//= "**we're**" however "**we're**" = "**we're**"|
+| **Program does not recognize numbers**|  "4" | "4"| "Please try again"|
+| **Program does recognize words that contain numbers**|  "4ever" | "4ever"| "**4ever**" = "**4ever**"|
+| **Program does not allow for multiple keywords**|  "bang bang" | "bang bang"| "Please try again"|
+| **Program does recognize words that contain numbers**|  "4ever" | "4ever"| "**4ever**" = "**4ever**"|
+| **Program disregards and does not tally words that contain the keyword addended or otherwise different from inputted form of keyword**| "bang" | "she bangs" | (**bang**) =//= (**bangs**) |
+| **Program continues to the end of the string after encountering an initial instance of the key word and records all separate subsequent instances**| "bang" | chitty chitty bang bang" | "**bang**" = "**bang**, **bang**" |
+| **When program reaches end of character array, it returns the number of keyword instances as an integer**| "bang" |chitty chitty bang bang" | Result: 2 |
 
 ## Known Bugs
 
@@ -30,7 +31,7 @@ A program that checks how frequently a word appears in a given string. The progr
 
 1. Follow the instructions for downloading C#, .NET Core 1.1 and Mono from: https://www.learnhowtoprogram.com/c/getting-started-with-c/installing-c
 1. Clone the repo at https://github.com/MattSmithereens/WordCountRedux
-1. Open WordCount.Solution.sln in Microsoft Visual Studio and click the play button on the top left.  Alternately, use BASH to navigate into the directory and type `dotnet restore`
+1. Open WordCount.Solution.sln in Microsoft Visual Studio and click the play button on the top left.  Alternately, use BASH to navigate into the directory and type `dotnet restore` then `dotnet run`
 1. Make a new branch
 1. Commit and push your changes
 1. Create a PR
