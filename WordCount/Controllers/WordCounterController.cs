@@ -26,9 +26,17 @@ namespace WordCount.Controllers
             string compareWords = Model.GetWords();
             string[] compareArray = Model.splitString(compareWords);
 
-            int result = Model.WordOccurs(compareArray, lowCaseWord);
-            Model.SetOccurTally(result);
-            return View(Model);
+            if (lowCaseWord == "" || compareArray == "")
+                {
+                return View("error");
+                    }
+                        else
+                    {
+                int result = Model.WordOccurs(compareArray, lowCaseWord);
+                Model.SetOccurTally(result);
+                return View(Model);
+                }
+
         }
     }
 }
