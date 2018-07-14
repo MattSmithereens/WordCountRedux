@@ -21,7 +21,7 @@ namespace WordCount.Models
 
         public void SetWord(string keyWord)
         {
-            if (this.WordLettersOnly(keyWord) && WordNoSpaces(keyWord))  // 
+            if (this.WordLettersOnly(keyWord) && WordNoSpaces(keyWord)) //  && WordValidCharactersOnly(keyWord)
             {
                 string LowCaseWord = keyWord.ToLower();
                 _keyWord = LowCaseWord;
@@ -42,7 +42,6 @@ namespace WordCount.Models
             char[] letterArray = keyWord.ToCharArray();
             foreach (char x in letterArray)
             {
-                //if(Char.)
                 if (Char.IsLetter(x))
                 {
                     return true;
@@ -60,6 +59,18 @@ namespace WordCount.Models
             }
             return false;
         }
+
+        //public bool WordValidCharactersOnly(string keyWord)
+        //{
+        //    string[] badCharacter = new string[] { "!", "@", "#", "$", "%", "^", ".", "};
+        //    string listArray = keyWord.Split();
+        //    if (listArray.Contains(badCharacter));
+        //    {
+        //        return false;
+        //    }
+
+        //    else return true;
+        //}
 
         public void SetWords(string words)
         {
