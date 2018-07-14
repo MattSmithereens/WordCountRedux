@@ -28,7 +28,7 @@ namespace WordCount.Tests.ModelTests
             string testWord = "CRASH";
             string expected = "crash";
             testWordCount.SetWord(testWord);
-            string actual = testWordCount.GetWord(testWord);
+            string actual = testWordCount.GetWord();
             Assert.AreEqual(expected, actual);
         }
 
@@ -40,7 +40,7 @@ namespace WordCount.Tests.ModelTests
             string testWords = "CRASH BANG BOOM";
             string expected = "crash bang boom";
             testWordCount.SetWords(testWords);
-            string actual = testWordCount.GetWords(testWords);
+            string actual = testWordCount.GetWords();
             Assert.AreEqual(expected, actual);
         }
 

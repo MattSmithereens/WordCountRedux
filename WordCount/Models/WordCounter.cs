@@ -7,13 +7,7 @@ namespace WordCount.Models
         private string _keyWord;            //keyword
         private string _words;              //comparative word
         private string[] _wordArray;        //comparative word array
-        private int _occurance;             //tallies instances of keyword
-
-        //public WordCount(string word, string phrase)
-        //{
-        //    _keyword = word.ToLower();
-        //    _wordArray = splitString(phrase.ToLower());
-        //}
+        private int _occurance = 0;         //tallies instances of keyword
 
         public void SetOccurTally(int score)
         {
@@ -22,7 +16,6 @@ namespace WordCount.Models
 
         public int GetOccurTally()
         {
-            _occurance = 0;
             return _occurance;
         }
 
@@ -39,7 +32,7 @@ namespace WordCount.Models
             }
         }
 
-        public string GetWord(string word)
+        public string GetWord()
         {
             return _keyWord;
         }
@@ -71,7 +64,7 @@ namespace WordCount.Models
             }
         }
 
-        public string GetWords(string words)
+        public string GetWords()
         {
             return _words;
         }
@@ -107,20 +100,17 @@ namespace WordCount.Models
         }
 
 
-        //public int WordOccurs(string[] listArray, string lowCaseWord)
-        //{
-        //  if(WordsLettersOnly())
-        //  {
-        //    int i = GetOccurTally();
-        //    foreach (string word in listArray)
-        //    {
-        //      if (word == lowCaseWord)
-        //      {
-        //        i++;
-        //      }
-        //    }
-        //    return i;
-        //  }
-        //}
+        public int WordOccurs(string[] listArray, string lowCaseWord)
+        {
+            int i = GetOccurTally();
+            foreach (string word in listArray)
+            {
+                  if (word == lowCaseWord)
+                  {
+                        i++;
+                  }
+            }
+            return i;
+        }
     }
 }

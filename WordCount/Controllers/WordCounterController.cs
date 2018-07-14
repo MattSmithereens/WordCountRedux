@@ -14,66 +14,20 @@ namespace WordCount.Controllers
         {
             return View();
         }
-
-        // Breaks build
+       
 
         [HttpPost("/result")]
-        public ActionResult Result(string checkWord, string checkPhrase)
+        public ActionResult Result()
         {
-            WordCount inputVariable = new
-
-
-
-            //WordCounter inputVariable = new WordCounter();
-            //inputVariable.SetWord(Request.Query["checkWord"]);
-            //inputVariable.SetWords(Request.Query["checkPhrase"]);
-
-            // this is where shit breaks
-            //string string1 = inputVariable.GetWord();
-            //string string2 = inputVariable.GetWords(words);
-            //string[] array = inputVariable.splitstring(string2);
-            //inputVariable.SetOccurTally(inputVariable.CheckString(array));
-              //}
-              //else
-              //{
-              //    return View("Error");
-              //}
-
-          return View();
-
-
-
-
-
-           // testWordCount.WordOccurs(listArray, lowCaseWord)
-
-          // add call to method for counting words
-
-          //return View(score);
-
-// END OF MY CODE
-
-        //[HttpPost("/inputlist")]
-        //public ActionResult InputList()
-        //{
-        //    Item word = new Item();
-        //    word.SetStringOne(Request.Form["word-one"]);
-        //    word.SetStringTwo(Request.Form["list-words"]);
-        //    string string1 = word.GetStringOne();
-        //    string string2 = word.GetStringTwo();
-        //    if (word.CorrectInput(string1) == true && word.CorrectInputTwo(string2) == true)
-        //    {
-        //        string[] array = word.splitWord(string2);
-        //        word.SetVarX(word.CheckString(array));
-        //    }
-        //    else
-        //    {
-        //        return View("Error");
-        //    }
-
-        //    return View(word);
-        //}
-
+            WordCounter Model = new WordCounter();
+            Model.SetWord(Request.Form["checkWord"]);
+            Model.SetWord(Request.Form["checkPhrase"]);
+            string lowCaseWord = Model.GetWord();                       //take word from form and feed it though getter, run methods
+            string compareWords = Model.GetWords();
+            string[] compareArray = Model.splitString(compareWords);    //take words from form and run through split method
+            int result = Model.WordOccurs(compareArray, lowCaseWord);   //actually run method checking words
+            Model.SetOccurTally(result);
+            return View(Model);
         }
     }
 }
