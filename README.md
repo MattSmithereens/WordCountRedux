@@ -1,4 +1,4 @@
-# Word Counter with MVC
+M# Word Counter with MVC
 
 #### Epicodus C#: Independent Code Review #2 07/06/2018
 
@@ -18,10 +18,9 @@ A program that checks how frequently a word appears in a given string. The progr
 | **Program does not recognize numbers**|  "4" | "4"| "Please try again"|
 | **Program does recognize words that contain numbers**|  "4ever" | "4ever"| "**4ever**" = "**4ever**"|
 | **Program does not allow for multiple keywords**|  "bang bang" | "bang bang"| "Please try again"|
-| **Program does recognize words that contain numbers**|  "4ever" | "4ever"| "**4ever**" = "**4ever**"|
 | **Program disregards and does not tally words that contain the keyword addended or otherwise different from inputted form of keyword**| "bang" | "she bangs" | (**bang**) =//= (**bangs**) |
 | **Program continues to the end of the string after encountering an initial instance of the key word and records all separate subsequent instances**| "bang" | chitty chitty bang bang" | "**bang**" = "**bang**, **bang**" |
-| **When program reaches end of character array, it returns the number of keyword instances as an integer**| "bang" |chitty chitty bang bang" | Result: 2 |
+| **When program reaches end of character array, it returns the number of keyword instances as an integer**| "bang" |chitty chitty bang bang" | Result: **2** |
 
 ## Known Bugs
 
